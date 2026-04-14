@@ -1,0 +1,73 @@
+# default configuration
+baseURL = "/"
+languageCode = "ja-jp"
+summaryLength = "100"
+hasCJKLanguage = true
+title = "きのかわ弦楽合奏団"
+
+# css plugins
+[[params.plugins.css]]
+link = "plugins/themify-icons/themify-icons.css"
+
+# menu
+[[menu.main]]
+URL = "about/"
+name = "About"
+weight = 1
+
+[[menu.main]]
+URL = "events/"
+name = "Events"
+weight = 2
+
+#[[menu.main]]
+#URL = "schedule/"
+#name = "Schedule"
+#weight = 3
+#
+#[[menu.main]]
+#URL = "blog/"
+#name = "Blog"
+#weight = 4
+
+[[menu.main]]
+URL = "contact/"
+name = "Contact"
+weight = 5
+
+#[[menu.main]]
+#URL = "donation/"
+#name = "Donation"
+#weight = 6
+
+# default parameters
+[params]
+home = "Home"
+logo = ""
+author = "Matsuda Kenji"
+description = "きのかわ弦楽合奏団ホームページ"
+copyright = "Copyright &copy; 2021 Yuki Okugawa"
+
+[taxonomies]
+author = 'author'
+category = 'categories'
+tag = 'tags'
+
+# social site
+[[params.social]]
+icon = "images/facebook.svg"
+title = "Facebook"
+linkText = "kinokawa.string"
+URL = "https://www.facebook.com/kinokawa.string/"
+
+[[params.social]]
+icon = "images/instagram.svg"
+title = "Instagram"
+linkText = "kinogen_string"
+URL = "https://www.instagram.com/kinogen_string/"
+
+[[params.social]]
+icon = "images/email.svg"
+title = "Email"
+linkText = "kinokawa.string@gmail.com"
+URL = "mailto:kinokawa.string@gmail.com"
