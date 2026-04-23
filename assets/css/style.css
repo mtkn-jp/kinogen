@@ -189,7 +189,7 @@ body {
 }
 
 .content {
-	width: clamp(480px, 80%, 1000px);
+	width: clamp(min(100%, 480px), 80%, 1000px);
 	flex-grow: 1;
 }
 
