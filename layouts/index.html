@@ -1,8 +1,8 @@
 {{ define "main" }}
 
 <div id="home-banner">
-  {{ if site.Data.homepage.topImage }}
-		{{ with resources.Get site.Data.homepage.topImage }}
+  {{ if hugo.Data.homepage.topImage }}
+		{{ with resources.Get hugo.Data.homepage.topImage }}
 			{{ $jpgImg := .Resize (printf "%dx%d jpg" .Width .Height) }}
 			<picture id="home-banner-picture">
 				<img src="{{ $jpgImg.RelPermalink }}" alt="bg-shape">
@@ -10,7 +10,7 @@
 		{{ end }}
   {{ else }}
   {{ end }}
-  <div id="home-banner-text">{{ site.Data.homepage.banner.title | safeHTML }}</div>
+  <div id="home-banner-text">{{ hugo.Data.homepage.banner.title | safeHTML }}</div>
 
     <ul class="social">
       {{ range site.Params.social }}
@@ -20,9 +20,9 @@
 </div>
 
 <div id="home-main">
-  {{ if site.Data.homepage.about.enable }}
+  {{ if hugo.Data.homepage.about.enable }}
 	  <div id="home-about">
-	  {{ with site.Data.homepage.about }}
+	  {{ with hugo.Data.homepage.about }}
 	  <p>{{.content | markdownify}}</p>
 	  {{ if .button.enable }}
 	  {{ with .button }}
@@ -35,15 +35,15 @@
 	</div>
   {{ end }}
 
-  {{ if site.Data.homepage.events.enable }}
-  <h2>{{site.Data.homepage.events.title }}</h2>
+  {{ if hugo.Data.homepage.events.enable }}
+  <h2>{{hugo.Data.homepage.events.title }}</h2>
 	{{ range (first 1 (where .Site.RegularPages "Section" "events")).ByDate.Reverse }}
 		{{ .Render "post" }}
 	{{ end }}
   {{ end }}
 
-  {{ if site.Data.homepage.activitie.enable }}
-  {{ with site.Data.homepage.activitie }}
+  {{ if hugo.Data.homepage.activitie.enable }}
+  {{ with hugo.Data.homepage.activitie }}
           <h2>{{ .title | markdownify }}</h2>
         {{ range .item }}
                 <h4>{{.title}}</h4>
@@ -52,8 +52,8 @@
   {{ end }}
   {{ end }}
 
-  {{ if site.Data.homepage.blog.enable }}
-          <h2>{{site.Data.homepage.blog.title | markdownify }}</h2>
+  {{ if hugo.Data.homepage.blog.enable }}
+          <h2>{{hugo.Data.homepage.blog.title | markdownify }}</h2>
 		  <ul>
         {{ range (first 3 (where .Site.RegularPages "Section" "blog")).ByDate.Reverse }}
 		<li>
