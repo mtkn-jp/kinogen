@@ -1,13 +1,10 @@
 # default configuration
 baseURL = "/"
-languageCode = "ja-jp"
+locale = "ja-jp"
 summaryLength = "100"
 hasCJKLanguage = true
 title = "きのかわ弦楽合奏団"
-
-# css plugins
-[[params.plugins.css]]
-link = "plugins/themify-icons/themify-icons.css"
+security.allowContent = ['.*']
 
 # menu
 [[menu.main]]
